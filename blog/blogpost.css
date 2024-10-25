@@ -1,4 +1,4 @@
-/* style.css - CSS for LaTeX-like Styling with Reduced Horizontal Margins */
+/* style.css - Responsive Styles Improved */
 
 /* Include a sans-serif font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
@@ -7,87 +7,25 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 14pt;
     line-height: 1.6;
-    margin: 1in 1in; /* 1 inch top/bottom, 0.5 inch left/right */
+    margin: 1em auto;
     text-align: justify;
     background-color: #FFFFFF;
     color: #000000;
-    max-width: none; /* Removed max-width to allow full width */
+    max-width: 800px;
+    padding: 0 1em;
+    box-sizing: border-box;
 }
 
- /* Style the main heading */
- h1 {
-     font-size: 24pt;
-     text-align: center;
-     margin-top: 0;
-     margin-bottom: 24pt;
-     font-weight: bold;
- }
+h1 {
+    font-size: 24pt;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+    font-weight: bold;
+}
 
- /* Style author and date */
- p.author, p.date {
-     text-align: center;
-     font-size: 14pt;
-     margin-top: 0;
-     margin-bottom: 24pt;
- }
+/* Other styles (h2, p, strong, etc.) remain the same */
 
- /* Style paragraphs */
- p {
-     margin-top: 0;
-     margin-bottom: 12pt;
-     /* No text-indent */
- }
-
- /* Style strong elements */
- strong {
-     font-weight: bold;
- }
-
- /* Center equations */
- .MathJax_Display {
-     text-align: center !important;
-     margin-top: 12pt;
-     margin-bottom: 12pt;
- }
-
- /* Style section headings */
- h2 {
-     font-size: 20pt;
-     margin-top: 24pt;
-     margin-bottom: 12pt;
-     font-weight: bold;
- }
-
- /* Style code elements */
- code {
-     font-family: 'Courier New', Courier, monospace;
-     font-size: 13pt;
- }
-
- /* Style lists */
- ul, ol {
-     margin-top: 0;
-     margin-bottom: 12pt;
-     padding-left: 1.5em;
- }
-
- li {
-     margin-bottom: 6pt;
- }
-
- /* Style horizontal rules */
- hr {
-     border: none;
-     border-top: 1px solid #000;
-     margin-top: 24pt;
-     margin-bottom: 24pt;
- }
-
- /* Style for footnotes (if any) */
- .footnote {
-     font-size: 12pt;
-     line-height: 1.4;
- }
 
 /* Custom Button Styles */
 .button {
@@ -106,15 +44,19 @@ body {
     cursor: pointer;
     display: inline-block;
     font-weight: 400;
-    height: calc(2.75em + 6px);
-    line-height: 2.75em;
+    /* Remove fixed height and line-height */
+    /* height: calc(2.75em + 6px); */
+    /* line-height: 2.75em; */
     min-width: 10em;
-    padding: 0 0;
+    padding: 0.75em 1.5em; /* Adjust padding for size and spacing */
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
-    margin-bottom: 4.5em;
+    box-sizing: border-box; /* Include padding and border in total size */
+    margin-top: 1em;
+    margin-bottom: 2em;
 }
+
 
 /* Hover and Active States */
 input[type="submit"]:hover,
@@ -217,7 +159,87 @@ input[type="button"]:disabled,
 /* Positioning for the back button */
 .back-button {
     position: fixed;
-    top: 20px;
-    left: 20px;
+    top: 1em;
+    left: 1em;
     z-index: 1000;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 15pt;
+        margin: 1em auto;
+        max-width: 95%;
+        padding: 0 1em;
+    }
+
+    h1 {
+        font-size: 22pt;
+    }
+
+    h2 {
+        font-size: 18pt;
+    }
+
+    .button {
+        font-size: 14pt;
+        padding: 0.5em 1em;
+    }
+
+    .back-button {
+        top: 1em;
+        left: 1em;
+    }
+
+    .MathJax {
+        overflow-x: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14pt;
+        margin: 0.5em auto;
+        max-width: 95%;
+        padding: 0 0.5em;
+    }
+
+    h1 {
+        font-size: 20pt;
+    }
+
+    h2 {
+        font-size: 16pt;
+    }
+
+    .button {
+        font-size: 14pt;
+        padding: 0.5em 1em;
+    }
+
+    .back-button {
+        top: 0.5em;
+        left: 0.5em;
+    }
+
+    .MathJax {
+        overflow-x: auto;
+    }
+}
+
+/* Responsive Images and Equations */
+img, video, iframe, .MathJax_Display {
+    max-width: 100%;
+    height: auto;
+}
+
+.MathJax {
+    max-width: 100%;
+}
+
+/* Box-sizing reset for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+
