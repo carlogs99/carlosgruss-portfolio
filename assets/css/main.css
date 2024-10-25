@@ -2645,6 +2645,8 @@ input, select, textarea {
 
 /* Footer */
 
+
+
 	#footer .icons {
 		margin: 1em 0 0 0;
 	}
@@ -3219,3 +3221,11 @@ input, select, textarea {
 			}
 
 	}
+
+    .blog-ul {
+        list-style-type: none;
+		color: rgba(255, 255, 255, 1);
+		list-style: none;
+		padding: 0;
+		padding-left: 0;
+    }

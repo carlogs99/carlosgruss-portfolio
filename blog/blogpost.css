@@ -1,0 +1,223 @@
+/* style.css - CSS for LaTeX-like Styling with Reduced Horizontal Margins */
+
+/* Include a sans-serif font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 14pt;
+    line-height: 1.6;
+    margin: 1in 1in; /* 1 inch top/bottom, 0.5 inch left/right */
+    text-align: justify;
+    background-color: #FFFFFF;
+    color: #000000;
+    max-width: none; /* Removed max-width to allow full width */
+}
+
+ /* Style the main heading */
+ h1 {
+     font-size: 24pt;
+     text-align: center;
+     margin-top: 0;
+     margin-bottom: 24pt;
+     font-weight: bold;
+ }
+
+ /* Style author and date */
+ p.author, p.date {
+     text-align: center;
+     font-size: 14pt;
+     margin-top: 0;
+     margin-bottom: 24pt;
+ }
+
+ /* Style paragraphs */
+ p {
+     margin-top: 0;
+     margin-bottom: 12pt;
+     /* No text-indent */
+ }
+
+ /* Style strong elements */
+ strong {
+     font-weight: bold;
+ }
+
+ /* Center equations */
+ .MathJax_Display {
+     text-align: center !important;
+     margin-top: 12pt;
+     margin-bottom: 12pt;
+ }
+
+ /* Style section headings */
+ h2 {
+     font-size: 20pt;
+     margin-top: 24pt;
+     margin-bottom: 12pt;
+     font-weight: bold;
+ }
+
+ /* Style code elements */
+ code {
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 13pt;
+ }
+
+ /* Style lists */
+ ul, ol {
+     margin-top: 0;
+     margin-bottom: 12pt;
+     padding-left: 1.5em;
+ }
+
+ li {
+     margin-bottom: 6pt;
+ }
+
+ /* Style horizontal rules */
+ hr {
+     border: none;
+     border-top: 1px solid #000;
+     margin-top: 24pt;
+     margin-bottom: 24pt;
+ }
+
+ /* Style for footnotes (if any) */
+ .footnote {
+     font-size: 12pt;
+     line-height: 1.4;
+ }
+
+/* Custom Button Styles */
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 0.35em;
+    border: solid 3px #efefef;
+    color: #787878 !important;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 400;
+    height: calc(2.75em + 6px);
+    line-height: 2.75em;
+    min-width: 10em;
+    padding: 0 0;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-bottom: 4.5em;
+}
+
+/* Hover and Active States */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+    border-color: #49bf9d;
+    color: #49bf9d !important;
+}
+
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+.button:active {
+    background-color: rgba(73, 191, 157, 0.1);
+    border-color: #49bf9d;
+    color: #49bf9d !important;
+}
+
+/* Icon Buttons */
+input[type="submit"].icon,
+input[type="reset"].icon,
+input[type="button"].icon,
+.button.icon {
+    padding-left: 1.35em;
+}
+
+input[type="submit"].icon:before,
+input[type="reset"].icon:before,
+input[type="button"].icon:before,
+.button.icon:before {
+    margin-right: 0.5em;
+}
+
+/* Fit Buttons */
+input[type="submit"].fit,
+input[type="reset"].fit,
+input[type="button"].fit,
+.button.fit {
+    min-width: 0;
+    width: 100%;
+}
+
+/* Small Buttons */
+input[type="submit"].small,
+input[type="reset"].small,
+input[type="button"].small,
+.button.small {
+    font-size: 0.8em;
+}
+
+/* Large Buttons */
+input[type="submit"].large,
+input[type="reset"].large,
+input[type="button"].large,
+.button.large {
+    font-size: 1.35em;
+}
+
+/* Primary Buttons */
+input[type="submit"].primary,
+input[type="reset"].primary,
+input[type="button"].primary,
+.button.primary {
+    background-color: #49bf9d;
+    border-color: #49bf9d;
+    color: #ffffff !important;
+}
+
+input[type="submit"].primary:hover,
+input[type="reset"].primary:hover,
+input[type="button"].primary:hover,
+.button.primary:hover {
+    background-color: #5cc6a7;
+    border-color: #5cc6a7;
+}
+
+input[type="submit"].primary:active,
+input[type="reset"].primary:active,
+input[type="button"].primary:active,
+.button.primary:active {
+    background-color: #3eb08f;
+    border-color: #3eb08f;
+}
+
+/* Disabled Buttons */
+input[type="submit"].disabled, input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+.button.disabled,
+.button:disabled {
+    background-color: #e7e7e7 !important;
+    border-color: #e7e7e7 !important;
+    color: #b2b2b2 !important;
+    cursor: default;
+}
+
+/* Positioning for the back button */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
