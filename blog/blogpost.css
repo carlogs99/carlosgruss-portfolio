@@ -7,87 +7,97 @@ body {
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 14pt;
     line-height: 1.6;
-    margin: 1in 1in; /* 1 inch top/bottom, 0.5 inch left/right */
+    margin: 1in 1in;
+    /* 1 inch top/bottom, 0.5 inch left/right */
     text-align: justify;
     background-color: #FFFFFF;
     color: #000000;
-    max-width: none; /* Removed max-width to allow full width */
+    max-width: none;
+    /* Removed max-width to allow full width */
 }
 
- /* Style the main heading */
- h1 {
-     font-size: 24pt;
-     text-align: center;
-     margin-top: 0;
-     margin-bottom: 24pt;
-     font-weight: bold;
- }
+/* Ensure parent containers can expand vertically */
+body, html {
+    height: auto;
+    overflow: visible;
+}
 
- /* Style author and date */
- p.author, p.date {
-     text-align: center;
-     font-size: 14pt;
-     margin-top: 0;
-     margin-bottom: 24pt;
- }
+/* Style the main heading */
+h1 {
+    font-size: 24pt;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 24pt;
+    font-weight: bold;
+}
 
- /* Style paragraphs */
- p {
-     margin-top: 0;
-     margin-bottom: 12pt;
-     /* No text-indent */
- }
+/* Style author and date */
+p.author,
+p.date {
+    text-align: center;
+    font-size: 14pt;
+    margin-top: 0;
+    margin-bottom: 24pt;
+}
 
- /* Style strong elements */
- strong {
-     font-weight: bold;
- }
+/* Style paragraphs */
+p {
+    margin-top: 0;
+    margin-bottom: 12pt;
+    /* No text-indent */
+}
 
- /* Center equations */
- .MathJax_Display {
-     text-align: center !important;
-     margin-top: 12pt;
-     margin-bottom: 12pt;
- }
+/* Style strong elements */
+strong {
+    font-weight: bold;
+}
 
- /* Style section headings */
- h2 {
-     font-size: 20pt;
-     margin-top: 24pt;
-     margin-bottom: 12pt;
-     font-weight: bold;
- }
+/* Center equations */
+.MathJax_Display {
+    text-align: center !important;
+    margin-top: 12pt;
+    margin-bottom: 12pt;
+}
 
- /* Style code elements */
- code {
-     font-family: 'Courier New', Courier, monospace;
-     font-size: 13pt;
- }
+/* Style section headings */
+h2 {
+    font-size: 20pt;
+    margin-top: 24pt;
+    margin-bottom: 12pt;
+    font-weight: bold;
+}
 
- /* Style lists */
- ul, ol {
-     margin-top: 0;
-     margin-bottom: 12pt;
-     padding-left: 1.5em;
- }
+/* Style code elements */
+code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13pt;
+}
 
- li {
-     margin-bottom: 6pt;
- }
+/* Style lists */
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 12pt;
+    padding-left: 1.5em;
+}
 
- /* Style horizontal rules */
- hr {
-     border: none;
-     border-top: 1px solid #000;
-     margin-top: 24pt;
-     margin-bottom: 24pt;
- }
+li {
+    margin-bottom: 6pt;
+}
 
- /* Style for footnotes (if any) */
- .footnote {
-     font-size: 12pt;
-     line-height: 1.4;
- }
+/* Style horizontal rules */
+hr {
+    border: none;
+    border-top: 1px solid #000;
+    margin-top: 24pt;
+    margin-bottom: 24pt;
+}
+
+/* Style for footnotes (if any) */
+.footnote {
+    font-size: 12pt;
+    line-height: 1.4;
+}
 
 /* Custom Button Styles */
 .button {
@@ -201,7 +211,8 @@ input[type="button"].primary:active,
 }
 
 /* Disabled Buttons */
-input[type="submit"].disabled, input[type="submit"]:disabled,
+input[type="submit"].disabled,
+input[type="submit"]:disabled,
 input[type="reset"].disabled,
 input[type="reset"]:disabled,
 input[type="button"].disabled,
@@ -220,4 +231,40 @@ input[type="button"]:disabled,
     top: 20px;
     left: 20px;
     z-index: 1000;
+}
+
+/* Prevent display equations from overflowing and make them responsive */
+mjx-container[display="true"][jax="CHTML"] {
+    max-width: 100%;
+    overflow-x: auto;      /* Allow horizontal scrolling when necessary */
+    overflow-y: visible;   /* Prevent vertical scrolling */
+    display: block;
+    text-align: center;    /* Ensure equations are centered */
+    height: auto;          /* Allow container to adjust height automatically */
+    max-height: none;    /* Remove any maximum height restrictions */
+    white-space: nowrap;   /* Prevent line breaks within equations */
+}
+
+
+/* Adjust font size of display equations on small screens */
+@media (max-width: 600px) {
+    mjx-container[display="true"][jax="CHTML"] {
+        font-size: 0.9em;       /* Adjust font size as needed */
+        height: auto;           /* Ensure height adjusts automatically */
+        max-height: none;       /* Remove any max-height restrictions */
+        white-space: nowrap;    /* Prevent line breaks within equations */
+    }
+
+    /* Adjust horizontal margins for small screens */
+    body {
+        margin: 0.5in 0.5in;    /* 0.5 inch top/bottom, 0.5 inch left/right */
+    }
+
+    /* Center the Home button horizontally */
+    .button {
+        display: block;            /* Make the button a block-level element */
+        margin: 0 auto 1em auto;   /* Center horizontally with auto margins */
+        text-align: center;        /* Ensure text inside the button is centered */
+        margin-bottom: 1em;        /* Adjusted from 4.5em to 1em for mobile */
+    }
 }
